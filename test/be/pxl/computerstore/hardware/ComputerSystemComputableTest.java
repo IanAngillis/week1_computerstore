@@ -23,6 +23,6 @@ public class ComputerSystemComputableTest {
 		computerSystem.addPeripheral(peripheral2);
 		double total = processor.getPrice() + computerCase.getPrice() + peripheral1.getPrice() + peripheral2.getPrice();
 		assertEquals(total, computerSystem.totalPriceExcl(), 0.001);
-		assertEquals(total * 1.21, computerSystem.totalPriceIncl(), 0.001);
+		assertEquals(total * 1.21, computerSystem.totalPriceIncl(), 0.1);
 	}
 }

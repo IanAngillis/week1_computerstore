@@ -40,8 +40,8 @@ public class ComputerSystem implements Computable {
     //Functions
     public void addPeripheral(Peripheral peripheral) throws TooManyPeripheralsException {
 
-        if(getNumberOfPeripherals() >= MAX_PERIPHERAL){
-            throw new TooManyPeripheralsException("Aantal toegelaten Peripheral objecten overschreden (max 3)");
+        if(getNumberOfPeripherals() == MAX_PERIPHERAL){
+            throw new TooManyPeripheralsException();
         }
 
         for(int i = 0; i < peripherals.length; i++){
@@ -59,6 +59,7 @@ public class ComputerSystem implements Computable {
 
             if( peripherals[i] != null && peripherals[i].getArticleNumber().equals(articleNumber)){
                 peripherals[i] = null;
+                return;
             }
         }
     }
