@@ -40,9 +40,14 @@ public class ComputerSystem implements Computable {
     //Functions
     public void addPeripheral(Peripheral peripheral) throws TooManyPeripheralsException {
 
+        /*
         if(getNumberOfPeripherals() == MAX_PERIPHERAL){
             throw new TooManyPeripheralsException();
         }
+        */
+
+        //Gay solution
+        boolean tooMany = true;
 
         for(int i = 0; i < peripherals.length; i++){
 
@@ -50,6 +55,10 @@ public class ComputerSystem implements Computable {
                 peripherals[i] = peripheral;
                 return;
             }
+        }
+
+        if(tooMany){
+            throw new TooManyPeripheralsException();
         }
     }
 

@@ -9,7 +9,7 @@ public class ComputerComponent {
     private double price;
     private static int uniqueNumber = 1;
 
-
+    //Constructor
     public ComputerComponent(String vendor, String name, double price){
         this.setVendor(vendor);
         this.setName(name);
@@ -24,6 +24,7 @@ public class ComputerComponent {
 
     public String getFullDescription(){
         StringBuilder temp = new StringBuilder();
+
         temp.append("ArticleNumber = ").append(getArticleNumber()).append("\n");
         temp.append("Vendor = ").append(getVendor()).append("\n");
         temp.append("Name = ").append(getName()).append("\n");

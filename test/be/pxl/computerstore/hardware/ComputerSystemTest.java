@@ -80,7 +80,8 @@ public class ComputerSystemTest {
 		computerSystem.removePeripheral(mouse.getArticleNumber());
 		assertEquals(countBefore, computerSystem.getNumberOfPeripherals());
 	}
-	
+
+
 	@Test(expected=TooManyPeripheralsException.class)
 	public void tooManyPeripheralsExceptionIsThrownWhenAllowedNumberOfPeripheralsExceeded() throws TooManyPeripheralsException {
 		ComputerSystem computerSystem = new ComputerSystem();
@@ -88,5 +89,4 @@ public class ComputerSystemTest {
 			computerSystem.addPeripheral(new MouseBuilder().build());
 		}
 	}
-	
 }
